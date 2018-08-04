@@ -15,10 +15,12 @@ Route::get('foo', function () {
     return view('hello world');
 });
 
+Route::get('demoone', 'DemoController@index');
+
 Route::resource('photos', 'PhotoController')->only([
 'index', 'show'
 ]);
 Route::resource('photos', 'PhotoController')->except([
 'create', 'store', 'update', 'destroy'
 ]);
-Route::resource('Admin/Users', 'Admin/UsersController');
+Route::resource('admin/users', 'Admin\UsersController');
